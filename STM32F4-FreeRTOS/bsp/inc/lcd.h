@@ -1,20 +1,166 @@
 #ifndef __LCD_H
 #define __LCD_H
 #include "stm32f4xx.h"
-/*部分液晶信号线的引用复用编号是AF9*/
-#define GPIO_AF_LTDC_AF9                ((uint8_t)0x09)
+/*
+LCD_BL  PB5  LCD 背光脚
+LCD_CS	PD7  FMC_NE1		片选
+LCD_RS	PD13 FMC_A18	
+LCD_WR	PD5	 FMC_NWE
+LCD_RD	PD4	 FMC_NOE		
+LCD_RST
+LCD_DB1-----LCD_DB17
 
-//红色数据线
-#define LTDC_R0_GPIO_PORT               GPIOH
-#define LTDC_R0_GPIO_CLK                RCC_AHB1Periph_GPIOH
-#define LTDC_R0_GPIO_PIN                GPIO_Pin_2
-#define LTDC_R0_PINSOURCE               GPIO_PinSoucre2
-#define LTDC_R0_AF                      GPIO_AF_LTDC            //使用LTDC复用编号
+D0: PD14	D1:PD15		D2:PD0		D3:PD1		D4:PE7		D5:PE8		D6:PE9		D7:PE10		
+D8:PE11		D9:PE12		D10:PE13	D11:PE14	D12:PE15	D13:PD8		D14:PD9		D15:PD10
+//2.8寸FMC接口屏
 
-#define LTDC_R3_GPIO_PORT               GPIOB
-#define LTDC_R3_GPIO_CLK                RCC_AHB1Periph_GPIOB
-#define LTDC_R3_GPIO_PIN                GPIO_Pin_0
-#define LTDC_R3_PINSOURCE               GPIO_PinSoucre0
-#define LTDC_R3_AF                      GPIO_AF_LTDC_AF9            //使用LTDC复用编号
+LCD_DE:PF10		LCD_CLK:PG7		LCD_VSYNC:PI9	LCD_HSYNC:PI10
+LCD_R[7:3] PG6、PH12、PH11、PH10、PH9
+LCD_G[7:2] PI2、PI1、PI0、PH15、PH14、PH13
+LCD_B[7:3] PI7、PI6、PI5、PI4、PG11
+
+*/
+//DE
+#define	LTDC_DE_PIN				GPIO_Pin_10
+#define LTDC_DE_PORT			GPIOF
+#define LTDC_DE_CLK				RCC_AHB1Periph_GPIOF
+#define LTDC_DE_PINSOURCE		GPIO_PinSource10
+#define LTDC_DE_AF				GPIO_AF_LTDC
+
+//CLK
+#define	LTDC_CLK_PIN			GPIO_Pin_7
+#define LTDC_CLK_PORT			GPIOG
+#define LTDC_CLK_CLK			RCC_AHB1Periph_GPIOG
+#define	LTDC_CLK_PINSOURCE		GPIO_PinSource7
+#define LTDC_CLK_AF				GPIO_AF_LTDC
+
+//VSYNC
+#define	LTDC_VSY_PIN			GPIO_Pin_9
+#define LTDC_VSY_PORT			GPIOI
+#define LTDC_VSY_CLK			RCC_AHB1Periph_GPIOI
+#define LTDC_VSY_PINSOURCE		GPIO_PinSource9
+#define LTDC_VSY_AF				GPIO_AF_LTDC
+
+//HSYNC
+#define LTDC_HSY_PIN			GPIO_Pin_10
+#define LTDC_HSY_PORT			GPIOI
+#define LTDC_HSY_CLK			RCC_AHB1Periph_GPIOI
+#define LTDC_HSY_PINSOURCE		GPIO_PinSource10
+#define LTDC_HSY_AF				GPIO_AF_LTDC
+
+//R3
+#define	LTDC_R3_Pin				GPIO_Pin_9
+#define LTDC_R3_PORT			GPIOH
+#define LTDC_R3_CLK				RCC_AHB1Periph_GPIOH
+#define LTDC_R3_PINSOURCE		GPIO_PinSource9
+#define LTDC_R3_AF				GPIO_AF_LTDC
+
+//R4
+#define LTDC_R4_Pin				GPIO_Pin_10
+#define LTDC_R4_PORT			GPIOH
+#define LTDC_R4_CLK				RCC_AHB1Periph_GPIOH
+#define LTDC_R4_PINSOURCE		GPIO_PinSource10
+#define LTDC_R4_AF				GPIO_AF_LTDC
+
+//R5
+#define LTDC_R5_Pin				GPIO_Pin_11
+#define LTDC_R5_PORT			GPIOH
+#define LTDC_R5_CLK				RCC_AHB1Periph_GPIOH
+#define LTDC_R5_PINSOURCE		GPIO_PinSource11
+#define LTDC_R5_AF				GPIO_AF_LTDC
+
+//R6
+#define LTDC_R6_Pin				GPIO_Pin_12
+#define LTDC_R6_PORT			GPIOH
+#define LTDC_R6_CLK				RCC_AHB1Periph_GPIOH
+#define LTDC_R6_PINSOURCE		GPIO_PinSource12
+#define LTDC_R6_AF				GPIO_AF_LTDC
+
+//R7
+#define LTDC_R7_Pin				GPIO_Pin_6
+#define LTDC_R7_PORT			GPIOG
+#define LTDC_R7_CLK				RCC_AHB1Periph_GPIOH
+#define LTDC_R7_PINSOURCE		GPIO_PinSource6
+#define LTDC_R7_AF				GPIO_AF_LTDC
+
+//G2
+#define LTDC_G2_Pin				GPIO_Pin_13
+#define LTDC_G2_PORT			GPIOG
+#define LTDC_G2_CLK				RCC_AHB1Periph_GPIOG
+#define LTDC_G2_PINSOURCE		GPIO_PinSource13
+#define LTDC_G2_AF				GPIO_AF_LTDC
+
+//G3
+#define LTDC_G3_Pin				GPIO_Pin_14
+#define LTDC_G3_PORT			GPIOH
+#define LTDC_G3_CLK				RCC_AHB1Periph_GPIOH
+#define LTDC_G3_PINSOURCE		GPIO_PinSource14
+#define LTDC_G3_AF				GPIO_AF_LTDC
+
+//G4
+#define LTDC_G4_Pin				GPIO_Pin_15
+#define LTDC_G4_PORT			GPIOH
+#define LTDC_G4_CLK				RCC_AHB1Periph_GPIOH
+#define LTDC_G4_PINSOURCE		GPIO_PinSource15
+#define LTDC_G4_AF				GPIO_AF_LTDC
+
+//G5
+#define LTDC_G5_Pin				GPIO_Pin_0
+#define LTDC_G5_PORT			GPIOI
+#define LTDC_G5_CLK				RCC_AHB1Periph_GPIOI
+#define LTDC_G5_PINSOURCE		GPIO_PinSource0
+#define LTDC_G5_AF				GPIO_AF_LTDC
+
+//G6
+#define LTDC_G6_Pin				GPIO_Pin_1
+#define LTDC_G6_PORT			GPIOI
+#define LTDC_G6_CLK				RCC_AHB1Periph_GPIOI
+#define LTDC_G6_PINSOURCE		GPIO_PinSource1
+#define LTDC_G6_AF				GPIO_AF_LTDC
+
+//G7
+#define LTDC_G7_Pin				GPIO_Pin_2
+#define LTDC_G7_PORT			GPIOI
+#define LTDC_G7_CLK				RCC_AHB1Periph_GPIOI
+#define LTDC_G7_PINSOURCE		GPIO_PinSource2
+#define LTDC_G7_AF				GPIO_AF_LTDC
+
+//B3
+#define LTDC_B3_Pin				GPIO_Pin_11
+#define LTDC_B3_PORT			GPIOG
+#define LTDC_B3_CLK				RCC_AHB1Periph_GPIOG
+#define LTDC_B3_PINSOURCE		GPIO_PinSource11
+#define LTDC_B3_AF				GPIO_AF_LTDC
+
+//B4
+#define LTDC_B4_Pin				GPIO_Pin_4
+#define LTDC_B4_PORT			GPIOI
+#define LTDC_B4_CLK				RCC_AHB1Periph_GPIOI
+#define LTDC_B4_PINSOURCE		GPIO_PinSource4
+#define LTDC_B4_AF				GPIO_AF_LTDC
+
+//B5
+#define LTDC_B5_Pin				GPIO_Pin_5
+#define LTDC_B5_PORT			GPIOI
+#define LTDC_B5_CLK				RCC_AHB1Periph_GPIOI
+#define LTDC_B5_PINSOURCE		GPIO_PinSource5
+#define LTDC_B5_AF				GPIO_AF_LTDC
+
+//B3
+#define LTDC_B6_Pin				GPIO_Pin_6
+#define LTDC_B6_PORT			GPIOI
+#define LTDC_B6_CLK				RCC_AHB1Periph_GPIOI
+#define LTDC_B6_PINSOURCE		GPIO_PinSource6
+#define LTDC_B6_AF				GPIO_AF_LTDC
+
+//B3
+#define LTDC_B7_Pin				GPIO_Pin_7
+#define LTDC_B7_PORT			GPIOI
+#define LTDC_B7_CLK				RCC_AHB1Periph_GPIOI
+#define LTDC_B7_PINSOURCE		GPIO_PinSource7
+#define LTDC_B7_AF				GPIO_AF_LTDC
+
+
+
 
 #endif

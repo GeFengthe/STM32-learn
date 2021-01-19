@@ -2,7 +2,7 @@
 .\objects\stm32f4xx_spdifrx.o: ..\lib\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_spdifrx.h
 .\objects\stm32f4xx_spdifrx.o: ..\lib\stm32f4xx.h
 .\objects\stm32f4xx_spdifrx.o: ..\lib\core\core_cm4.h
-.\objects\stm32f4xx_spdifrx.o: F:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+.\objects\stm32f4xx_spdifrx.o: E:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
 .\objects\stm32f4xx_spdifrx.o: ..\lib\core\core_cmInstr.h
 .\objects\stm32f4xx_spdifrx.o: ..\lib\core\core_cmFunc.h
 .\objects\stm32f4xx_spdifrx.o: ..\lib\core\core_cmSimd.h

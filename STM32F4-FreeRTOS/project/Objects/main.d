@@ -1,7 +1,7 @@
 .\objects\main.o: ..\user\main.c
 .\objects\main.o: ..\lib\stm32f4xx.h
 .\objects\main.o: ..\lib\core\core_cm4.h
-.\objects\main.o: F:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+.\objects\main.o: E:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
 .\objects\main.o: ..\lib\core\core_cmInstr.h
 .\objects\main.o: ..\lib\core\core_cmFunc.h
 .\objects\main.o: ..\lib\core\core_cmSimd.h
@@ -38,7 +38,7 @@
 .\objects\main.o: ..\lib\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_ltdc.h
 .\objects\main.o: ..\lib\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_sai.h
 .\objects\main.o: ..\FreeRTOS\include\FreeRTOS.h
-.\objects\main.o: F:\Keil_v5\ARM\ARMCC\Bin\..\include\stddef.h
+.\objects\main.o: E:\Keil_v5\ARM\ARMCC\Bin\..\include\stddef.h
 .\objects\main.o: ..\FreeRTOS\include\FreeRTOSConfig.h
 .\objects\main.o: ..\FreeRTOS\include\projdefs.h
 .\objects\main.o: ..\FreeRTOS\include\portable.h
@@ -48,5 +48,5 @@
 .\objects\main.o: ..\bsp\inc\led.h
 .\objects\main.o: ..\FreeRTOS\include\task.h
 .\objects\main.o: ..\FreeRTOS\include\list.h
-.\objects\main.o: F:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
+.\objects\main.o: E:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
 .\objects\main.o: ..\bsp\inc\uart.h

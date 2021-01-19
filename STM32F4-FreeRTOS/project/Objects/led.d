@@ -2,7 +2,7 @@
 .\objects\led.o: ..\bsp\inc\led.h
 .\objects\led.o: ..\lib\stm32f4xx.h
 .\objects\led.o: ..\lib\core\core_cm4.h
-.\objects\led.o: F:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+.\objects\led.o: E:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
 .\objects\led.o: ..\lib\core\core_cmInstr.h
 .\objects\led.o: ..\lib\core\core_cmFunc.h
 .\objects\led.o: ..\lib\core\core_cmSimd.h

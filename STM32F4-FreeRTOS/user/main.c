@@ -75,7 +75,7 @@ void LedON(void)
 {
     while(1)
     {
-        LedSwitch(BULE_GPIO_Pin,0);
+        LedSwitch(RED_GPIO_Pin,1);
         LedSwitch(GREEN_GPIO_Pin,1);
         printf("green_LED 灯亮\r\n");
         vTaskDelay(1000);
@@ -87,9 +87,16 @@ void LedOFF(void)
 {
     while(1)
     {
-        LedSwitch(GREEN_GPIO_Pin,0);
-        LedSwitch(BULE_GPIO_Pin, 1);
+        LedSwitch(GREEN_GPIO_Pin,1);
+        LedSwitch(RED_GPIO_Pin, 1);
         printf("BULE_LED 灯亮\r\n");
         vTaskDelay(10);
     }
+}
+
+//硬件测试函数
+void BSP_Test(void)
+{
+    
+    
 }

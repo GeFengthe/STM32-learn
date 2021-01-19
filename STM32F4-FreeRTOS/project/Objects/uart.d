@@ -2,7 +2,7 @@
 .\objects\uart.o: ..\bsp\inc\uart.h
 .\objects\uart.o: ..\lib\stm32f4xx.h
 .\objects\uart.o: ..\lib\core\core_cm4.h
-.\objects\uart.o: F:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+.\objects\uart.o: E:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
 .\objects\uart.o: ..\lib\core\core_cmInstr.h
 .\objects\uart.o: ..\lib\core\core_cmFunc.h
 .\objects\uart.o: ..\lib\core\core_cmSimd.h
@@ -39,7 +39,7 @@
 .\objects\uart.o: ..\lib\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_ltdc.h
 .\objects\uart.o: ..\lib\STM32F4xx_StdPeriph_Driver\inc\stm32f4xx_sai.h
 .\objects\uart.o: ..\FreeRTOS\include\FreeRTOS.h
-.\objects\uart.o: F:\Keil_v5\ARM\ARMCC\Bin\..\include\stddef.h
+.\objects\uart.o: E:\Keil_v5\ARM\ARMCC\Bin\..\include\stddef.h
 .\objects\uart.o: ..\FreeRTOS\include\FreeRTOSConfig.h
 .\objects\uart.o: ..\FreeRTOS\include\projdefs.h
 .\objects\uart.o: ..\FreeRTOS\include\portable.h
@@ -48,4 +48,4 @@
 .\objects\uart.o: ..\FreeRTOS\include\mpu_wrappers.h
 .\objects\uart.o: ..\FreeRTOS\include\task.h
 .\objects\uart.o: ..\FreeRTOS\include\list.h
-.\objects\uart.o: F:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
+.\objects\uart.o: E:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h

@@ -2,12 +2,11 @@
 #define __LED_H
 #include "stm32f4xx.h"
 
-#define RED_GPIO_Pin        GPIO_Pin_10
-#define RED_GPIO_Port       GPIOH
-#define GREEN_GPIO_Pin      GPIO_Pin_11
-#define GREEN_GPIO_Port     GPIOH
-#define BULE_GPIO_Pin       GPIO_Pin_12
-#define BULE_GPIO_Port      GPIOH
+#define RED_GPIO_Pin        GPIO_Pin_1
+#define RED_GPIO_Port       GPIOB
+#define GREEN_GPIO_Pin      GPIO_Pin_0
+#define GREEN_GPIO_Port     GPIOB
+
 
 
 void init_led(void);
